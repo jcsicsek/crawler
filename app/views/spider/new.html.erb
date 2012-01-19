@@ -1,0 +1,9 @@
+<%= form_tag("/show", :method => "post") do %>
+	<%= label_tag(:url, "Domain:  http://") %>
+	<%= text_field_tag(:url) %>
+	<br />
+	<%= label_tag(:max_pages, "Maximum pages to scan:  ") %>
+	<%= text_field_tag(:max_pages, "10") %>
+	<br />
+	<%= submit_tag("Crawl!") %>
+<% end %>

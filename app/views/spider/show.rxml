@@ -1,0 +1,11 @@
+xml.instruct! :xml, :version=>"1.0" 
+xml.domain(:url => @results[0][:url]) do
+  @results.each do |page|
+    xml.page(:url => page[:url]) do
+      xml.title page[:title]
+      page[:meta].each do |meta|
+        xml.meta(meta.to_hash)
+      end
+    end
+  end
+end
